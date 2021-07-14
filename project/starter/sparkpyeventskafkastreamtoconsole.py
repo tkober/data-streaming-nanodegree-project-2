@@ -16,7 +16,7 @@ stediEventsRawDf = spark.readStream\
     .load()
 
 # TODO: cast the value column in the streaming dataframe as a STRING
-stediEventsDf = stediEventsRawDf.select('cast(value as string) value')
+stediEventsDf = stediEventsRawDf.selectExpr('cast(value as string) value')
 
 # TODO: parse the JSON from the single column "value" with a json object in it, like this:
 # +------------+
