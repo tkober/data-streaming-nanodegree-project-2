@@ -1,14 +1,21 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, col, unbase64, base64, split
 from pyspark.sql.types import StructField, StructType, StringType, BooleanType, ArrayType, DateType
+from constants import KAFKA_BROKERS_STRING, STEDI_EVENTS_TOPIC
 
 spark = SparkSession.builder.appName('STEDI-events').getOrCreate()
 spark.sparkContext.setLogLevel('WARN')
 
 # TODO: using the spark application object, read a streaming dataframe from the Kafka topic stedi-events as the source
 # Be sure to specify the option that reads all the events from the topic including those that were published before you started the spark stream
+stediEventsRawDf = spark.readStream\
+    .format('kafka')\
+    .option('subscribe', STEDI_EVENTS_TOPIC)\
+    .option('kafka.bootstrap.servers', KAFKA_BROKERS_STRING)\
+    .option('startingOffsets', 'earliest')\
+    .load()
 
-# TODO: cast the value column in the streaming dataframe as a STRING 
+# TODO: cast the value column in the streaming dataframe as a STRING
 
 # TODO: parse the JSON from the single column "value" with a json object in it, like this:
 # +------------+
