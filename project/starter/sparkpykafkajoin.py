@@ -135,6 +135,7 @@ stediEventsDf.withColumn('value', from_json('value', stediEventSchema)) \
 customerRiskStreamingDf = spark.sql('SELECT customer, score FROM CustomerRisk')
 
 # TODO: join the streaming dataframes on the email address to get the risk score and the birth year in the same dataframe
+resultDf = customerRiskStreamingDf.join(emailAndBirthYearStreamingDf, expr('customer=email'))
 
 # TODO: sink the joined dataframes to a new kafka topic to send the data to the STEDI graph application 
 # +--------------------+-----+--------------------+---------+
@@ -148,4 +149,4 @@ customerRiskStreamingDf = spark.sql('SELECT customer, score FROM CustomerRisk')
 # |Sarah.Clark@test.com| -4.0|Sarah.Clark@test.com|     1957|
 # +--------------------+-----+--------------------+---------+
 #
-# In this JSON Format {"customer":"Santosh.Fibonnaci@test.com","score":"28.5","email":"Santosh.Fibonnaci@test.com","birthYear":"1963"} 
+# In this JSON Format {"customer":"Santosh.Fibonnaci@test.com","score":"28.5","email":"Santosh.Fibonnaci@test.com","birthYear":"1963"}
