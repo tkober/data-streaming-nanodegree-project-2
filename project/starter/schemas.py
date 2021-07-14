@@ -44,18 +44,3 @@ stediEventSchema = StructType([
     StructField('score', FloatType()),
     StructField('riskDate', DateType())
 ])
-
-# TODO: Define a stedi risk topic for sinking the joined DF to Kafka
-# Example
-# {
-#   "customer": "Santosh.Fibonnaci@test.com",
-#   "score": "28.5",
-#   "email":"Santosh.Fibonnaci@test.com",
-#   "birthYear": "1963"
-# }
-stediRiskSchema = StructType([
-    StructField('customer', StringType()),
-    StructField('score', StringType()),
-    StructField('email', StringType()),
-    StructField('birthYear', StringType())
-])
