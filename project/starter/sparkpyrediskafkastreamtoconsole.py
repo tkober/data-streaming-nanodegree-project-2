@@ -130,6 +130,7 @@ customerDf\
     .createOrReplaceTempView('CustomerRecords')
 
 # TODO: JSON parsing will set non-existent fields to null, so let's select just the fields we want, where they are not null as a new dataframe called emailAndBirthDayStreamingDF
+emailAndBirthDayStreamingDf = spark.sql('SELECT FROM CustomerRecords WHERE email IS NOT NULL AND birthDay IS NOT NULL')
 
 # TODO: from the emailAndBirthDayStreamingDF dataframe select the email and the birth year (using the split function)
 
