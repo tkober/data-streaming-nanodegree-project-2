@@ -38,6 +38,8 @@ stediEventsDf.withColumn('value', from_json('value', stediEventSchema))\
     .createOrReplaceTempView('CustomerRisk')
 
 # TODO: execute a sql statement against a temporary view, selecting the customer and the score from the temporary view, creating a dataframe called customerRiskStreamingDF
+customerRiskStreamingDf = spark.sql('SELECT customer, score FROM CustomerRisk')
+
 # TODO: sink the customerRiskStreamingDF dataframe to the console in append mode
 # 
 # It should output like this:
@@ -49,4 +51,4 @@ stediEventsDf.withColumn('value', from_json('value', stediEventSchema))\
 # +--------------------+-----
 # Run the python script by running the command from the terminal:
 # /home/workspace/submit-event-kafka-streaming.sh
-# Verify the data looks correct 
+# Verify the data looks correct
