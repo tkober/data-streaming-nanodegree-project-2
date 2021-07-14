@@ -103,6 +103,7 @@ redisServerDf.withColumn('value', from_json('value', redisSchema))\
 
 # TODO: execute a sql statement against a temporary view, which statement takes the element field from the 0th element in the array of structs and create a column called encodedCustomer
 # the reason we do it this way is that the syntax available select against a view is different than a dataframe, and it makes it easy to select the nth element of an array in a sql column
+encodedCustomerDf = spark.sql('SELECT zSetEntries[0].element as encodedCustomer FROM RedisSortedSet')
 
 # TODO: take the encodedCustomer column which is base64 encoded at first like this:
 # +--------------------+
