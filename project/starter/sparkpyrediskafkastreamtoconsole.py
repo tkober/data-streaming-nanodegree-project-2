@@ -51,6 +51,7 @@ stediEventSchema = StructType([
 spark = SparkSession.builder.appName('STEDI').getOrCreate()
 
 # TODO: set the spark log level to WARN
+spark.sparkContext.setLogLevel('WARN')
 
 # TODO: using the spark application object, read a streaming dataframe from the Kafka topic redis-server as the source
 # Be sure to specify the option that reads all the events from the topic including those that were published before you started the spark stream
