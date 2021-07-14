@@ -1,0 +1,274 @@
+:: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-37b4997e-3caa-4840-a370-1d57270b5e71;1.0
+	confs: [default]
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.0.0 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.0.0 in central
+	found org.apache.kafka#kafka-clients;2.4.1 in central
+	found com.github.luben#zstd-jni;1.4.4-3 in central
+	found org.lz4#lz4-java;1.7.1 in central
+	found org.xerial.snappy#snappy-java;1.1.7.5 in central
+	found org.slf4j#slf4j-api;1.7.30 in central
+	found org.spark-project.spark#unused;1.0.0 in central
+	found org.apache.commons#commons-pool2;2.6.2 in central
+:: resolution report :: resolve 833ms :: artifacts dl 76ms
+	:: modules in use:
+	com.github.luben#zstd-jni;1.4.4-3 from central in [default]
+	org.apache.commons#commons-pool2;2.6.2 from central in [default]
+	org.apache.kafka#kafka-clients;2.4.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.0.0 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.0.0 from central in [default]
+	org.lz4#lz4-java;1.7.1 from central in [default]
+	org.slf4j#slf4j-api;1.7.30 from central in [default]
+	org.spark-project.spark#unused;1.0.0 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.7.5 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   9   |   0   |   0   |   0   ||   9   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-37b4997e-3caa-4840-a370-1d57270b5e71
+	confs: [default]
+	0 artifacts copied, 9 already retrieved (0kB/32ms)
+21/07/14 10:52:40 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/07/14 10:52:41 INFO SparkContext: Running Spark version 3.1.2
+21/07/14 10:52:41 INFO ResourceUtils: ==============================================================
+21/07/14 10:52:41 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/07/14 10:52:41 INFO ResourceUtils: ==============================================================
+21/07/14 10:52:41 INFO SparkContext: Submitted application: STEDI-redis
+21/07/14 10:52:41 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/07/14 10:52:41 INFO ResourceProfile: Limiting resource is cpu
+21/07/14 10:52:41 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/07/14 10:52:41 INFO SecurityManager: Changing view acls to: spark
+21/07/14 10:52:41 INFO SecurityManager: Changing modify acls to: spark
+21/07/14 10:52:41 INFO SecurityManager: Changing view acls groups to: 
+21/07/14 10:52:41 INFO SecurityManager: Changing modify acls groups to: 
+21/07/14 10:52:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(spark); groups with view permissions: Set(); users  with modify permissions: Set(spark); groups with modify permissions: Set()
+21/07/14 10:52:41 INFO Utils: Successfully started service 'sparkDriver' on port 43467.
+21/07/14 10:52:41 INFO SparkEnv: Registering MapOutputTracker
+21/07/14 10:52:42 INFO SparkEnv: Registering BlockManagerMaster
+21/07/14 10:52:42 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+21/07/14 10:52:42 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+21/07/14 10:52:42 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+21/07/14 10:52:42 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2eb37e8c-ec12-43c9-96fe-130b135f27fd
+21/07/14 10:52:42 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+21/07/14 10:52:42 INFO SparkEnv: Registering OutputCommitCoordinator
+21/07/14 10:52:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+21/07/14 10:52:42 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://1127a61f386e:4040
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar at spark://1127a61f386e:43467/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar at spark://1127a61f386e:43467/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar at spark://1127a61f386e:43467/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar at spark://1127a61f386e:43467/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at spark://1127a61f386e:43467/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar at spark://1127a61f386e:43467/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar at spark://1127a61f386e:43467/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar at spark://1127a61f386e:43467/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar at spark://1127a61f386e:43467/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.kafka_kafka-clients-2.4.1.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.commons_commons-pool2-2.6.2.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.spark-project.spark_unused-1.0.0.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar at file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/com.github.luben_zstd-jni-1.4.4-3.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.lz4_lz4-java-1.7.1.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar at file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.xerial.snappy_snappy-java-1.1.7.5.jar
+21/07/14 10:52:42 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar at file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1626259961311
+21/07/14 10:52:42 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.slf4j_slf4j-api-1.7.30.jar
+21/07/14 10:52:43 INFO Executor: Starting executor ID driver on host 1127a61f386e
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/com.github.luben_zstd-jni-1.4.4-3.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.xerial.snappy_snappy-java-1.1.7.5.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.kafka_kafka-clients-2.4.1.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.commons_commons-pool2-2.6.2.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.spark-project.spark_unused-1.0.0.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.lz4_lz4-java-1.7.1.jar
+21/07/14 10:52:43 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.slf4j_slf4j-api-1.7.30.jar
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO TransportClientFactory: Successfully created connection to 1127a61f386e/172.27.0.3:43467 after 76 ms (0 ms spent in bootstraps)
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.lz4_lz4-java-1.7.1.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp3947343284136526873.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp3947343284136526873.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.lz4_lz4-java-1.7.1.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.lz4_lz4-java-1.7.1.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.apache.commons_commons-pool2-2.6.2.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp5178417812501721416.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp5178417812501721416.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.commons_commons-pool2-2.6.2.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.commons_commons-pool2-2.6.2.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/com.github.luben_zstd-jni-1.4.4-3.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp6500193269879670628.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp6500193269879670628.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/com.github.luben_zstd-jni-1.4.4-3.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/com.github.luben_zstd-jni-1.4.4-3.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.slf4j_slf4j-api-1.7.30.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp8594606754287036837.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp8594606754287036837.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.slf4j_slf4j-api-1.7.30.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.slf4j_slf4j-api-1.7.30.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.apache.kafka_kafka-clients-2.4.1.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp2257374189386397213.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp2257374189386397213.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.kafka_kafka-clients-2.4.1.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.kafka_kafka-clients-2.4.1.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp2501506113181065948.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp2501506113181065948.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.spark-project.spark_unused-1.0.0.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.spark-project.spark_unused-1.0.0.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp658212492727446252.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp658212492727446252.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp1089776206077987080.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp1089776206077987080.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.xerial.snappy_snappy-java-1.1.7.5.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.xerial.snappy_snappy-java-1.1.7.5.jar to class loader
+21/07/14 10:52:43 INFO Executor: Fetching spark://1127a61f386e:43467/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1626259961311
+21/07/14 10:52:43 INFO Utils: Fetching spark://1127a61f386e:43467/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp5598482296142290172.tmp
+21/07/14 10:52:43 INFO Utils: /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/fetchFileTemp5598482296142290172.tmp has been previously copied to /tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+21/07/14 10:52:43 INFO Executor: Adding file:/tmp/spark-9148b066-9017-4b7b-a2b9-80a722976c25/userFiles-5b6a86ee-01bf-4cff-960d-7b0587fdaef7/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to class loader
+21/07/14 10:52:43 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40803.
+21/07/14 10:52:43 INFO NettyBlockTransferService: Server created on 1127a61f386e:40803
+21/07/14 10:52:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+21/07/14 10:52:43 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 1127a61f386e, 40803, None)
+21/07/14 10:52:43 INFO BlockManagerMasterEndpoint: Registering block manager 1127a61f386e:40803 with 366.3 MiB RAM, BlockManagerId(driver, 1127a61f386e, 40803, None)
+21/07/14 10:52:43 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 1127a61f386e, 40803, None)
+21/07/14 10:52:43 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 1127a61f386e, 40803, None)
+21/07/14 10:52:44 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/opt/bitnami/spark/spark-warehouse').
+21/07/14 10:52:44 INFO SharedState: Warehouse path is 'file:/opt/bitnami/spark/spark-warehouse'.
+21/07/14 10:52:50 WARN StreamingQueryManager: Temporary checkpoint location created which is deleted normally when the query didn't fail: /tmp/temporary-edce2e58-89b2-48c3-8db7-cf300e2b5b16. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+-------------------------------------------
+Batch: 0
+-------------------------------------------
++--------------------+---------+
+|               email|birthYear|
++--------------------+---------+
+|Jerry.Mitra@test.com|     1965|
+|Sean.Harris@test.com|     1964|
+|Ashley.Staples@te...|     1963|
+|Travis.Khatib@tes...|     1962|
+|Danny.Doshi@test.com|     1961|
+|Larry.Ahmed@test.com|     1960|
+|Chris.Staples@tes...|     1959|
+|Danny.Davis@test.com|     1958|
+|   Larry.Wu@test.com|     1957|
+|  Lyn.Doshi@test.com|     1956|
+|Ashley.Anderson@t...|     1955|
+|Chris.Spencer@tes...|     1954|
+|Angie.Lincoln@tes...|     1953|
+|Jacob.Davis@test.com|     1952|
+|Trevor.Jones@test...|     1951|
+|Larry.Phillips@te...|     1950|
+|Suresh.Clayton@te...|     1949|
+|  Dan.Jones@test.com|     1948|
+|Gail.Anandh@test.com|     1947|
+|Jason.Hansen@test...|     1946|
++--------------------+---------+
+only showing top 20 rows
+
+-------------------------------------------
+Batch: 1
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 2
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 3
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 4
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 5
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 6
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 7
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 8
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 9
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 10
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+^CTraceback (most recent call last):
+  File "/home/workspace/project/starter/sparkpyrediskafkastreamtoconsole.py", line 126, in <module>
+    .format('console') \
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/streaming.py", line 101, in awaitTermination
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1303, in __call__
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+  File "/opt/bitnami/python/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/context.py", line 285, in signal_handler
+KeyboardInterrupt
