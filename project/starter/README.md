@@ -33,7 +33,7 @@ docker exec -it nd029-c2-apache-spark-and-spark-streaming_redis_1 redis-cli
 - Type:
 
 ```
-zrange customer 0 -1
+zrange Customer 0 -1
 ```
 
 - Locate the the customer you created in the output
