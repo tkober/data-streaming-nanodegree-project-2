@@ -3,14 +3,33 @@ from pyspark.sql.functions import from_json, to_json, col, unbase64, base64, spl
 from pyspark.sql.types import StructField, StructType, StringType, BooleanType, ArrayType, DateType
 
 # TO-DO: create a StructType for the Kafka redis-server topic which has all changes made to Redis - before Spark 3.0.0, schema inference is not automatic
+redisSchema = StructType(
+    [
+        StructField("key", StringType()),
+        StructField("value", StringType()),
+        StructField("expiredType", StringType()),
+        StructField("expiredValue", StringType()),
+        StructField("existType", StringType()),
+        StructField("ch", StringType()),
+        StructField("incr", BooleanType()),
+        StructField("zSetEntries", ArrayType( \
+            StructType([
+                StructField("element", StringType()), \
+                StructField("score", StringType()) \
+                ])) \
+                    )
+
+    ]
+)
 
 # TO-DO: create a StructType for the Customer JSON that comes from Redis- before Spark 3.0.0, schema inference is not automatic
 
+
 # TO-DO: create a StructType for the Kafka stedi-events topic which has the Customer Risk JSON that comes from Redis- before Spark 3.0.0, schema inference is not automatic
 
-#TO-DO: create a spark application object
+# TO-DO: create a spark application object
 
-#TO-DO: set the spark log level to WARN
+# TO-DO: set the spark log level to WARN
 
 # TO-DO: using the spark application object, read a streaming dataframe from the Kafka topic redis-server as the source
 # Be sure to specify the option that reads all the events from the topic including those that were published before you started the spark stream
@@ -64,7 +83,7 @@ from pyspark.sql.types import StructField, StructType, StringType, BooleanType, 
 # |            customer|
 # +--------------------+
 # |{"customerName":"...|
-#+--------------------+
+# +--------------------+
 #
 # with this JSON format: {"customerName":"Sam Test","email":"sam.test@test.com","phone":"8015551212","birthDay":"2001-01-03"}
 
@@ -94,4 +113,4 @@ from pyspark.sql.types import StructField, StructType, StringType, BooleanType, 
 
 # Run the python script by running the command from the terminal:
 # /home/workspace/submit-redis-kafka-streaming.sh
-# Verify the data looks correct 
+# Verify the data looks correct
