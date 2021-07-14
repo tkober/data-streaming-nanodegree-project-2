@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, col, unbase64, base64, split
-from pyspark.sql.types import StructField, StructType, StringType, BooleanType, ArrayType, DateType
 from constants import KAFKA_BROKERS_STRING, STEDI_EVENTS_TOPIC
+from schemas import stediEventSchema
 
 spark = SparkSession.builder.appName('STEDI-events').getOrCreate()
 spark.sparkContext.setLogLevel('WARN')
@@ -33,6 +33,10 @@ stediEventsDf = stediEventsRawDf.select('cast(value as string) value')
 # +------------+-----+-----------+
 #
 # storing them in a temporary view called CustomerRisk
+stediEventsDf.withColumn('value', from_json('value', stediEventSchema))\
+    .select(col('value.*'))\
+    .createOrReplaceTempView('CustomerRisk')
+
 # TODO: execute a sql statement against a temporary view, selecting the customer and the score from the temporary view, creating a dataframe called customerRiskStreamingDF
 # TODO: sink the customerRiskStreamingDF dataframe to the console in append mode
 # 
