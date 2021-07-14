@@ -158,3 +158,9 @@ emailAndBirthYearStreamingDf = emailAndBirthDayStreamingDf.select(
 # Run the python script by running the command from the terminal:
 # /home/workspace/submit-redis-kafka-streaming.sh
 # Verify the data looks correct
+emailAndBirthYearStreamingDf\
+    .writeStream\
+    .outputMode('append')\
+    .format('console')\
+    .start()\
+    .awaitTermination()
