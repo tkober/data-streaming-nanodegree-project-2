@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, to_json, col, unbase64, base64, split, expr
-from constants import KAFKA_BROKERS_STRING, REDIS_SERVER_TOPIC, STEDI_EVENTS_TOPIC
+from constants import KAFKA_BROKERS_STRING, REDIS_SERVER_TOPIC, STEDI_EVENTS_TOPIC, STEDI_RISK_TOPIC
 from schemas import redisSchema, customerSchema, stediEventSchema
 
 # TODO: create a StructType for the Kafka redis-server topic which has all changes made to Redis - before Spark 3.0.0, schema inference is not automatic
@@ -150,3 +150,11 @@ resultDf = customerRiskStreamingDf.join(emailAndBirthYearStreamingDf, expr('cust
 # +--------------------+-----+--------------------+---------+
 #
 # In this JSON Format {"customer":"Santosh.Fibonnaci@test.com","score":"28.5","email":"Santosh.Fibonnaci@test.com","birthYear":"1963"}
+resultDf.selectExpr('to_json(struct(*)) AS value') \
+    .writeStream \
+    .format('kafka') \
+    .option('kafka.bootstrap.servers', KAFKA_BROKERS_STRING) \
+    .option('topic', STEDI_RISK_TOPIC) \
+    .option('checkpointLocation', '/tmp/kafkacheckpoint') \
+    .start() \
+    .awaitTermination()
