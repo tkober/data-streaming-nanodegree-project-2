@@ -57,10 +57,10 @@ spark.sparkContext.setLogLevel('WARN')
 # TODO: using the spark application object, read a streaming dataframe from the Kafka topic redis-server as the source
 # Be sure to specify the option that reads all the events from the topic including those that were published before you started the spark stream
 redisServerRawDf = spark.readStream \
-    .format('kafka')\
-    .option('subscribe', REDIS_SERVER_TOPIC)\
-    .option('kafka.bootstrap.servers', KAFKA_BROKERS_STRING)\
-    .option('startingOffsets', 'earliest')\
+    .format('kafka') \
+    .option('subscribe', REDIS_SERVER_TOPIC) \
+    .option('kafka.bootstrap.servers', KAFKA_BROKERS_STRING) \
+    .option('startingOffsets', 'earliest') \
     .load()
 
 # TODO: cast the value column in the streaming dataframe as a STRING
@@ -97,9 +97,9 @@ redisServerDf = redisServerRawDf.selectExpr('cast(value as string) value')
 # +------------+-----+-----------+------------+---------+-----+-----+-----------------+
 #
 # storing them in a temporary view called RedisSortedSet
-redisServerDf\
-    .withColumn('value', from_json('value', redisSchema))\
-    .select(col('value.*'))\
+redisServerDf \
+    .withColumn('value', from_json('value', redisSchema)) \
+    .select(col('value.*')) \
     .createOrReplaceTempView('RedisSortedSet')
 
 # TODO: execute a sql statement against a temporary view, which statement takes the element field from the 0th element in the array of structs and create a column called encodedCustomer
@@ -124,13 +124,14 @@ zSetEntriesDf = spark.sql('SELECT zSetEntries[0].element as encodedCustomer FROM
 customerDf = zSetEntriesDf.withColumn('customer', unbase64(zSetEntriesDf.encodedCustomer).cast('string'))
 
 # TODO: parse the JSON in the Customer record and store in a temporary view called CustomerRecords
-customerDf\
-    .withColumn('customer', from_json('customer', customerSchema))\
-    .select(col('customer.*'))\
+customerDf \
+    .withColumn('customer', from_json('customer', customerSchema)) \
+    .select(col('customer.*')) \
     .createOrReplaceTempView('CustomerRecords')
 
 # TODO: JSON parsing will set non-existent fields to null, so let's select just the fields we want, where they are not null as a new dataframe called emailAndBirthDayStreamingDF
-emailAndBirthDayStreamingDf = spark.sql('SELECT * FROM CustomerRecords WHERE email IS NOT NULL AND birthDay IS NOT NULL')
+emailAndBirthDayStreamingDf = spark.sql(
+    'SELECT * FROM CustomerRecords WHERE email IS NOT NULL AND birthDay IS NOT NULL')
 
 # TODO: from the emailAndBirthDayStreamingDF dataframe select the email and the birth year (using the split function)
 # TODO: Split the birth year as a separate field from the birthday
@@ -158,9 +159,9 @@ emailAndBirthYearStreamingDf = emailAndBirthDayStreamingDf.select(
 # Run the python script by running the command from the terminal:
 # /home/workspace/submit-redis-kafka-streaming.sh
 # Verify the data looks correct
-emailAndBirthYearStreamingDf\
-    .writeStream\
-    .outputMode('append')\
-    .format('console')\
-    .start()\
+emailAndBirthYearStreamingDf \
+    .writeStream \
+    .outputMode('append') \
+    .format('console') \
+    .start() \
     .awaitTermination()
