@@ -97,6 +97,9 @@ redisServerDf = redisServerRawDf.selectExpr('cast(value as string) value')
 # +------------+-----+-----------+------------+---------+-----+-----+-----------------+
 #
 # storing them in a temporary view called RedisSortedSet
+redisServerDf.withColumn('value', from_json('value', redisSchema))\
+    .select(col('value.*'))\
+    .createOrReplaceTempView('RedisSortedSet')
 
 # TODO: execute a sql statement against a temporary view, which statement takes the element field from the 0th element in the array of structs and create a column called encodedCustomer
 # the reason we do it this way is that the syntax available select against a view is different than a dataframe, and it makes it easy to select the nth element of an array in a sql column
