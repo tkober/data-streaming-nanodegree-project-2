@@ -8,10 +8,10 @@ from schemas import redisSchema, customerSchema, stediEventSchema
 # TODO: create a StructType for the Kafka stedi-events topic which has the Customer Risk JSON that comes from Redis- before Spark 3.0.0, schema inference is not automatic
 # See schemas.py
 
-#TODO: create a spark application object
+# TODO: create a spark application object
 spark = SparkSession.builder.appName('STEDI-joining').getOrCreate()
 
-#TODO: set the spark log level to WARN
+# TODO: set the spark log level to WARN
 spark.sparkContext.setLogLevel('WARN')
 
 # TODO: using the spark application object, read a streaming dataframe from the Kafka topic redis-server as the source
@@ -78,7 +78,7 @@ zSetEntriesDf = spark.sql('SELECT zSetEntries[0].element as encodedCustomer FROM
 # |            customer|
 # +--------------------+
 # |{"customerName":"...|
-#+--------------------+
+# +--------------------+
 #
 # with this JSON format: {"customerName":"Sam Test","email":"sam.test@test.com","phone":"8015551212","birthDay":"2001-01-03"}
 customerDf = zSetEntriesDf.withColumn('customer', unbase64(zSetEntriesDf.encodedCustomer).cast('string'))
@@ -108,7 +108,7 @@ stediEventsRawDf = spark.readStream \
     .option('kafka.bootstrap.servers', KAFKA_BROKERS_STRING) \
     .option('startingOffsets', 'earliest') \
     .load()
-                                   
+
 # TODO: cast the value column in the streaming dataframe as a STRING 
 stediEventsDf = stediEventsRawDf.selectExpr('cast(value as string) value')
 
