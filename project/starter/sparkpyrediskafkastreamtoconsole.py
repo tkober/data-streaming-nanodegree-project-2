@@ -49,7 +49,7 @@ stediEventSchema = StructType([
 ])
 
 # TODO: create a spark application object
-spark = SparkSession.builder.appName('STEDI').getOrCreate()
+spark = SparkSession.builder.appName('STEDI-redis').getOrCreate()
 
 # TODO: set the spark log level to WARN
 spark.sparkContext.setLogLevel('WARN')
