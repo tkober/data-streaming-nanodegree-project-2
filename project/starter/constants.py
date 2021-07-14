@@ -1,0 +1,2 @@
+KAFKA_BROKERS_STRING = 'kafka:19092'
+REDIS_SERVER_TOPIC = 'redis-server'

@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, to_json, col, unbase64, base64, split, expr
 from pyspark.sql.types import StructField, StructType, StringType, BooleanType, ArrayType, DateType, FloatType
+from constants import REDIS_SERVER_TOPIC, KAFKA_BROKERS_STRING
 
 # TODO: create a StructType for the Kafka redis-server topic which has all changes made to Redis - before Spark 3.0.0, schema inference is not automatic
 redisSchema = StructType([
@@ -16,7 +17,7 @@ redisSchema = StructType([
             StructField('element', StringType()),
             StructField('score', StringType())
         ]))
-    )
+                )
 ])
 
 # TODO: create a StructType for the Customer JSON that comes from Redis- before Spark 3.0.0, schema inference is not automatic
@@ -55,8 +56,15 @@ spark.sparkContext.setLogLevel('WARN')
 
 # TODO: using the spark application object, read a streaming dataframe from the Kafka topic redis-server as the source
 # Be sure to specify the option that reads all the events from the topic including those that were published before you started the spark stream
+redisServerRawDf = spark.readStream \
+    .format('kafka')\
+    .option('subscribe', REDIS_SERVER_TOPIC)\
+    .option('kafka.bootstrap.servers', KAFKA_BROKERS_STRING)\
+    .option('startingOffsets', 'earliest')\
+    .load()
 
-# TODO: cast the value column in the streaming dataframe as a STRING 
+# TODO: cast the value column in the streaming dataframe as a STRING
+redisServerDf = redisServerRawDf.selectExpr('cast(value as string) value')
 
 # TODO:; parse the single column "value" with a json object in it, like this:
 # +------------+
